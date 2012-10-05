@@ -1,0 +1,194 @@
+package master;
+
+import java.awt.*;
+import javax.swing.*;
+import java.util.Vector;
+import java.awt.event.*;
+
+/**
+ * <p>Title: </p>
+ * <p>Description: </p>
+ * <p>Copyright: Copyright (c) 2009</p>
+ * <p>Company: </p>
+ * @author Benhallam Wassim
+ * @version 1.0
+ */
+
+public class ClassPanel extends JFrame {
+  Vector list;
+  Vector courses = new Vector();
+  JPanel jPanel1 = new JPanel();
+  JScrollPane js = new JScrollPane();
+  JTable jTable1 = new JTable();
+  JLabel jLabel1 = new JLabel();
+  JLabel jLabel2 = new JLabel();
+  JComboBox jComboBox1 = new JComboBox();
+  JLabel jLabel3 = new JLabel();
+  JComboBox jComboBox2 = new JComboBox();
+  JList jList1 = new JList();
+  JList jList2 = new JList();
+  JButton jButton1 = new JButton();
+  JLabel jLabel4 = new JLabel();
+  JLabel jLabel5 = new JLabel();
+  JComboBox jComboBox3 = new JComboBox();
+  JLabel jLabel6 = new JLabel();
+  JLabel jLabel7 = new JLabel();
+
+  public ClassPanel() {
+    try {
+      jbInit();
+    }
+    catch(Exception ex) {
+      ex.printStackTrace();
+    }
+  }
+
+  void jbInit() throws Exception {
+   this.getContentPane().setLayout(null);
+    jPanel1.setBackground(Color.white);
+    jPanel1.setBounds(new Rectangle(0, 1, 699, 462));
+    jPanel1.setLayout(null);
+    js.setBounds(new Rectangle(5, 319, 558, 121));
+    jTable1.setModel(new javax.swing.table.DefaultTableModel(
+    new Object [][] {
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null}
+    },
+    new String [] {
+        "Class ID", "Number of sections", "Number of Students", "Level", "Status", "number of professors"
+    }
+) {
+    boolean[] canEdit = new boolean [] {
+        false, false, false, false, false, false
+    };
+
+    public boolean isCellEditable(int rowIndex, int columnIndex) {
+        return canEdit [columnIndex];
+    }
+});
+   // this.setContentPane(jPanel1);
+    //this.getContentPane().add(jPanel1, null);
+    //jPanel1.add(js, null);
+    jLabel1.setText("Class ID");
+    jLabel1.setBounds(new Rectangle(60, 42, 79, 28));
+    jLabel2.setText("number of sections");
+    jLabel2.setBounds(new Rectangle(176, 48, 110, 14));
+    jComboBox1.setBounds(new Rectangle(175, 62, 135, 23));
+    jLabel3.setBounds(new Rectangle(326, 48, 120, 14));
+    jLabel3.setText("Students per section");
+    jComboBox2.setBounds(new Rectangle(326, 62, 148, 23));
+    jList1.setBorder(BorderFactory.createLineBorder(Color.black));
+    jList1.setBounds(new Rectangle(20, 113, 173, 140));
+    jList2.setBounds(new Rectangle(345, 112, 173, 140));
+    jList2.setBorder(BorderFactory.createLineBorder(Color.black));
+    jButton1.setBounds(new Rectangle(209, 159, 120, 30));
+    jButton1.setBorder(BorderFactory.createLineBorder(Color.black));
+    jButton1.setText("Add Course");
+    jButton1.addActionListener(new Class_jButton1_actionAdapter(this));
+    jLabel4.setText("Available Courses");
+    jLabel4.setBounds(new Rectangle(52, 90, 143, 23));
+    jLabel5.setText("Added Courses");
+    jLabel5.setBounds(new Rectangle(386, 95, 144, 19));
+    jComboBox3.setBounds(new Rectangle(31, 63, 119, 20));
+    jLabel6.setIcon(new ImageIcon(ClassPanel.class.getResource("ClassAdd.png")));
+    jLabel6.setText("");
+    jLabel6.setBounds(new Rectangle(1, 0, 656, 39));
+    jLabel7.setBounds(new Rectangle(-1, 271, 648, 39));
+    jLabel7.setText("");
+    jLabel7.setIcon(new ImageIcon(ClassPanel.class.getResource("ClassView copy.png")));
+    jPanel1.add(jLabel1, null);
+    jPanel1.add(jComboBox2, null);
+    jPanel1.add(jLabel3, null);
+    jPanel1.add(jComboBox1, null);
+    jPanel1.add(jLabel2, null);
+    jPanel1.add(jComboBox3, null);
+    jPanel1.add(jList1, null);
+    jPanel1.add(jButton1, null);
+    jPanel1.add(jList2, null);
+    jPanel1.add(js, null);
+    jPanel1.add(jLabel7, null);
+    jPanel1.add(jLabel4, null);
+    jPanel1.add(jLabel5, null);
+    jPanel1.add(jLabel6, null);
+    js.add(jTable1, null);
+    this.getContentPane().add(jPanel1, null);
+    js.setViewportView(jTable1);
+    jComboBox1.addItem("1");
+    jComboBox1.addItem("2");
+    jComboBox1.addItem("3");
+    jComboBox1.addItem("4");
+    jComboBox2.addItem("15");
+    jComboBox2.addItem("30");
+    jComboBox2.addItem("45");
+    jComboBox2.addItem("60");
+
+    jComboBox3.addItem("Level 1");
+    jComboBox3.addItem("Level 2");
+    jComboBox3.addItem("Level 3");
+    jComboBox3.addItem("Level 4");
+    jComboBox3.addItem("Level 5");
+    jComboBox3.addItem("Level 6");
+
+
+    Vector li = new Vector();
+    li.add("Mathematique");
+    li.add("Physique");
+    li.add("Francais");
+    li.add("Arabe");
+    li.add("Science de la vie");
+    li.add("Software engineering");
+    li.add("Geographie");
+    li.add("Histoire");
+
+
+    jList1.setListData(li);
+
+    jList1.setName("Courses");
+
+
+
+
+
+  }
+
+  void jButton1_actionPerformed(ActionEvent e) {
+    if(!courses.contains(jList1.getSelectedValue())){
+      courses.add(jList1.getSelectedValue());
+      jList2.setListData(courses);
+    }}
+
+
+
+  }
+
+/*  private void UpdateTable(){
+    Object data[][] = new Object[list.getRooms().size()][6];
+            String titles[] = {"Room Number", "Type", "Rate", "Price","Smoke", "Occupied"};
+            for(int i =list.getRooms().size()-1;i>=0;i--){
+            data[list.getRooms().size()-1-i][0]=list.getRooms().get(i).getNum();
+            data[list.getRooms().size()-1-i][1]=""+list.getRooms().get(i).getType();
+            data[list.getRooms().size()-1-i][2]=list.getRooms().get(i).getRate();
+            data[list.getRooms().size()-1-i][3]=list.getRooms().get(i).getPrice();
+            data[list.getRooms().size()-1-i][4]=""+list.getRooms().get(i).getSmoke();
+            data[list.getRooms().size()-1-i][5]=list.getRooms().get(i).isOccupied();
+    }
+            mymodel ml = new mymodel(data,titles);
+            jTable2.setModel(ml);
+}
+*/
+
+
+class Class_jButton1_actionAdapter implements java.awt.event.ActionListener {
+  ClassPanel adaptee;
+
+  Class_jButton1_actionAdapter(ClassPanel adaptee) {
+    this.adaptee = adaptee;
+  }
+  public void actionPerformed(ActionEvent e) {
+    (ClassPanel)adaptee.jButton1_actionPerformed(e);
+  }
+}

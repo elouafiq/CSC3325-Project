@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--JBuilder XML Project-->
+<project>
+  <property category="debug.0" name="SmartStepRedefineClasses" value="0"/>
+  <property category="debug.0" name="SmartStepSkipStaticInitializers" value="0"/>
+  <property category="debug.0" name="SmartStepSkipSynthetics" value="0"/>
+  <property category="javaFormatting" name="packageThreshold" value="0"/>
+  <property category="javadoc" name="custom.tags.1" value="todo;a;To Do:"/>
+  <property category="runtime.0" name="BuildTargetOnRun" value="com.borland.jbuilder.build.ProjectBuilder$ProjectBuildAction;make"/>
+  <property category="runtime.0" name="ConfigurationName" value="Untitled Runtime Configuration1"/>
+  <property category="runtime.0" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+  <property category="runtime.0" name="application.class" value="master.MasterFrame"/>
+  <property category="serverservices" name="single.server.name" value="Tomcat 4.0"/>
+  <property category="sys" name="AuthorLabel" value="@author"/>
+  <property category="sys" name="BackupPath" value="bak"/>
+  <property category="sys" name="CheckStable" value="1"/>
+  <property category="sys" name="Company" value=""/>
+  <property category="sys" name="CompanyLabel" value="Company:"/>
+  <property category="sys" name="Copyright" value="Copyright (c) 2009"/>
+  <property category="sys" name="CopyrightLabel" value="Copyright:"/>
+  <property category="sys" name="DefaultPath" value="src"/>
+  <property category="sys" name="Description" value=""/>
+  <property category="sys" name="DescriptionLabel" value="Description:"/>
+  <property category="sys" name="DocPath" value="doc"/>
+  <property category="sys" name="ExcludeClassEnabled" value="0"/>
+  <property category="sys" name="IncludeTestPath" value="1"/>
+  <property category="sys" name="InstanceVisibility" value="2"/>
+  <property category="sys" name="JDK" value="java version 1.4.2_01-b06"/>
+  <property category="sys" name="JvmVersion" value="1.2"/>
+  <property category="sys" name="LastTag" value="0"/>
+  <property category="sys" name="Libraries" value=""/>
+  <property category="sys" name="MakeStable" value="0"/>
+  <property category="sys" name="OutPath" value="classes"/>
+  <property category="sys" name="SourcePath" value="src;test"/>
+  <property category="sys" name="TestPath" value="test"/>
+  <property category="sys" name="Title" value=""/>
+  <property category="sys" name="TitleLabel" value="Title:"/>
+  <property category="sys" name="Version" value="1.0"/>
+  <property category="sys" name="VersionLabel" value="@version"/>
+  <property category="sys" name="WorkingDirectory" value="."/>
+  <property category="sys" name="uidesign.size.MasterFrame" value="806,628"/>
+  <property category="sys" name="uidesign.size.master.AbsencePanel" value="469,465"/>
+  <property category="sys" name="uidesign.size.master.ClassPanel" value="570,473"/>
+  <property category="sys" name="uidesign.size.master.EmployeePanel" value="499,475"/>
+  <property category="sys" name="uidesign.size.master.LoginP" value="598,479"/>
+  <property category="sys" name="uidesign.size.master.MasterFrame" value="749,622"/>
+  <property category="sys" name="uidesign.size.master.TransportPanel" value="420,405"/>
+  <property category="sys" name="uidesign.size.master.Welcome" value="602,446"/>
+  <property category="sys" name="uidesign.size.master.addTeacher" value="536,461"/>
+  <property category="sys" name="uidesign.size.myFrames.StudentPanel" value="520,512"/>
+  <property category="sys" name="uidesign.size.sms.ClassPanel" value="565,467"/>
+  <node name="Application" type="Archive">
+    <property category="archiving" name="archiverClass" value="com.borland.jbuilder.wizard.archive.ApplicationArchiver"/>
+    <property category="archiving" name="contentRules.1" value="I:**/*.*"/>
+    <property category="archiving" name="manifestMainClass" value="master.MasterFrame"/>
+    <property category="archiving" name="saveManifestPath" value="src/META-INF/MANIFEST.MF"/>
+    <property category="archiving" name="targetCompressed" value="1"/>
+    <property category="archiving" name="targetPath" value="School-Information-System.jar"/>
+    <property category="archiving" name="usingRules" value="1"/>
+  </node>
+  <file path="src/master/Abs.png"/>
+  <file path="src/master/AbsenceShow.png"/>
+  <file path="src/master/AbsenceView.png"/>
+  <file path="src/master/Abslum.png"/>
+  <file path="src/master/afficher.png"/>
+  <file path="src/master/ajouter.png"/>
+  <file path="src/master/Back.PNG"/>
+  <file path="src/master/Button-Add-icon.png"/>
+  <file path="src/master/Button-Close-icon.png"/>
+  <file path="src/master/Button-Info-icon.png"/>
+  <file path="src/master/Button-Refresh-icon.png"/>
+  <file path="src/master/ClassAdd.png"/>
+  <file path="src/master/Classes.png"/>
+  <file path="src/master/ClassesLUm.png"/>
+  <file path="src/master/ClassView copy.png"/>
+  <file path="src/master/EmployeeAdd.png"/>
+  <file path="src/master/EmployeeShow.png"/>
+  <file path="src/master/Employes.png"/>
+  <file path="src/master/EmpLum.png"/>
+  <file path="src/master/green-windows-7-wallpapers_11839_1024x768.jpg"/>
+  <file path="src/master/Login.png"/>
+  <file path="src/master/LoginButton.png"/>
+  <file path="src/master/LoginLum.png"/>
+  <file path="src/META-INF/MANIFEST.MF"/>
+  <file path="src/master/Menu.png"/>
+  <file path="src/master/MenuLum.png"/>
+  <file path="src/master/Pro.png"/>
+  <file path="src/master/professeurADD.png"/>
+  <file path="src/master/ProfesseurView.png"/>
+  <file path="src/master/ProfLum.png"/>
+  <file path="src/master/SIS.png"/>
+  <file path="src/master/stud.png"/>
+  <file path="src/master/StudLum.png"/>
+  <file path="src/master/TempBqck.PNG"/>
+  <file path="src/master/TransLum.png"/>
+  <file path="src/master/Transport.png"/>
+  <file path="src/master/User-icon.png"/>
+  <file path="src/master/VehiculeAdd.png"/>
+  <file path="src/master/VehiculeView.png"/>
+</project>

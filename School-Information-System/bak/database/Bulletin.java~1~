@@ -1,0 +1,103 @@
+package database;
+
+import java.util.Vector;
+import java.util.GregorianCalendar;
+
+public class Bulletin {
+	private String sectionId;
+	private String semster;
+	private int Excellence;
+	private String className;
+	private int year;
+	private Vector grades;
+	private double localUnifiedGrade; //mouwa7ad//25%
+	private double globalUnifiedGrade; //25%
+	private int totalAbsences;
+
+	public Bulletin(String sectionId, String semster, String className,
+			float localUnifiedGrade, float globalUnifiedGrade) {
+		super();
+		this.sectionId = sectionId;
+		this.semster = semster;
+		this.className = className;
+		this.localUnifiedGrade = localUnifiedGrade;
+		this.globalUnifiedGrade = globalUnifiedGrade;
+		grades = new Vector();
+		year = new GregorianCalendar().get(GregorianCalendar.YEAR);
+	}
+
+	public String getSectionId() {
+		return sectionId;
+	}
+
+	public void setSectionId(String sectionId) {
+		this.sectionId = sectionId;
+	}
+
+	public String getSemster() {
+		return semster;
+	}
+
+	public void setSemster(String semster) {
+		this.semster = semster;
+	}
+
+	public int getExcellence() {
+		return Excellence;
+	}
+
+	public void setExcellence(int excellence) {
+		Excellence = excellence;
+	}
+
+	public String getClassName() {
+		return className;
+	}
+
+	public void setClassName(String className) {
+		this.className = className;
+	}
+
+	public int getYear() {
+		return year;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	public Vector getGrades() {
+		return grades;
+	}
+
+	public void setGrades(Vector grades) {
+		this.grades = grades;
+	}
+
+	public double getLocalUnifiedGrade() {
+		return localUnifiedGrade;
+	}
+
+	public void setLocalUnifiedGrade(double localUnifiedGrade) {
+		this.localUnifiedGrade = localUnifiedGrade;
+	}
+
+	public double getGlobalUnifiedGrade() {
+		return globalUnifiedGrade;
+	}
+
+	public void setGlobalUnifiedGrade(double globalUnifiedGrade) {
+		this.globalUnifiedGrade = globalUnifiedGrade;
+	}
+
+	public int getTotalAbsences() {
+		return totalAbsences;
+	}
+
+	public void setTotalAbsences(int totalAbsences) {
+		this.totalAbsences = totalAbsences;
+	}
+
+
+
+}

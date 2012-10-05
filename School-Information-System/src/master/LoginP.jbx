@@ -1,0 +1,14 @@
+[PropertyInfo]
+jLabel1,JLabel,false,false, , ,false,<default>
+jLabel2,JLabel,false,false, , ,false,<default>
+jLabel3,JLabel,false,false, , ,false,<default>
+jPasswordField1,JPasswordField,false,false, , ,false,<default>
+jTextField1,JTextField,false,false, , ,false,<default>
+jToggleButton1,JToggleButton,false,false, , ,false,<default>
+m,MasterFrame,false,false, , ,false,<default>
+Welcome,JPanel,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

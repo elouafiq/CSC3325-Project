@@ -1,0 +1,171 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import javax.swing.*;
+import java.awt.*;
+
+/**
+ * <p>Title: </p>
+ * <p>Description: </p>
+ * <p>Copyright: Copyright (c) 2009</p>
+ * <p>Company: </p>
+ * @author not attributable
+ * @version 1.0
+ */
+
+public class MasterFrame extends JFrame {
+  JPanel jPanel1 = new JPanel();
+  JButton Add = new JButton();
+  JButton View = new JButton();
+  JButton Edit = new JButton();
+  JButton Delete = new JButton();
+  JPanel jPanel2 = new JPanel();
+  JButton jButton1 = new JButton();
+  JButton jButton3 = new JButton();
+  JButton jButton4 = new JButton();
+  JButton jButton5 = new JButton();
+  JButton jButton6 = new JButton();
+  JButton jButton7 = new JButton();
+  JButton jButton8 = new JButton();
+  public static void main(){
+    MasterFrame master=new MasterFrame();
+    master.setSize(805,626);
+    master.setVisible(true);
+  }
+  public MasterFrame() {
+    try {
+      jbInit();
+    }
+    catch(Exception ex) {
+      ex.printStackTrace();
+    }
+  }
+
+  void jbInit() throws Exception {
+    this.getContentPane().setLayout(null);
+    jPanel1.setBounds(new Rectangle(232, 10, 584, 81));
+    jPanel1.setLayout(null);
+    Add.setBounds(new Rectangle(0, 0, 146, 81));
+    Add.setFont(new java.awt.Font("Times New Roman", 1, 16));
+    Add.setForeground(SystemColor.activeCaptionText);
+    Add.setDebugGraphicsOptions(0);
+    Add.setBorderPainted(false);
+    Add.setContentAreaFilled(false);
+    Add.setHorizontalTextPosition(SwingConstants.TRAILING);
+    Add.setIcon(new ImageIcon(MasterFrame.class.getResource("SoftIcons/Main/Button-Add-icon.png")));
+    Add.setText("Ajouter");
+    View.setBounds(new Rectangle(352, 4, 194, 81));
+    View.setFont(new java.awt.Font("Times New Roman", 1, 14));
+    View.setForeground(SystemColor.activeCaptionText);
+    View.setBorderPainted(false);
+    View.setContentAreaFilled(false);
+    View.setIcon(new ImageIcon(MasterFrame.class.getResource("SoftIcons/Main/Button-Info-icon.png")));
+    View.setText("Voire Infos");
+    Edit.setBounds(new Rectangle(241, 3, 146, 81));
+    Edit.setFont(new java.awt.Font("Times New Roman", 1, 14));
+    Edit.setForeground(SystemColor.activeCaptionText);
+    Edit.setBorderPainted(false);
+    Edit.setContentAreaFilled(false);
+    Edit.setFocusPainted(true);
+    Edit.setIcon(new ImageIcon(MasterFrame.class.getResource("SoftIcons/Main/Button-Refresh-icon.png")));
+    Edit.setText("Editer");
+    Delete.setBounds(new Rectangle(107, 1, 165, 81));
+    Delete.setFont(new java.awt.Font("Times New Roman", 1, 14));
+    Delete.setForeground(SystemColor.activeCaptionText);
+    Delete.setBorderPainted(false);
+    Delete.setContentAreaFilled(false);
+    Delete.setHorizontalTextPosition(SwingConstants.TRAILING);
+    Delete.setIcon(new ImageIcon(MasterFrame.class.getResource("SoftIcons/Main/Button-Close-icon.png")));
+    Delete.setText("Supprimer");
+    jPanel2.setBackground(Color.lightGray);
+    jPanel2.setBounds(new Rectangle(12, 108, 184, 517));
+    jPanel2.setLayout(null);
+    jButton1.setBackground(SystemColor.activeCaptionBorder);
+    jButton1.setBounds(new Rectangle(8, 78, 163, 47));
+    jButton1.setMaximumSize(new Dimension(33, 9));
+    jButton1.setActionCommand("");
+    jButton1.setBorderPainted(false);
+    jButton1.setContentAreaFilled(false);
+    jButton1.setIcon(new ImageIcon(MasterFrame.class.getResource("SoftIcons/Main/Menu.png")));
+    jButton1.setRolloverEnabled(true);
+    jButton1.setRolloverIcon(new ImageIcon(MasterFrame.class.getResource("SoftIcons/Main/MenuLum.png")));
+    jButton1.setText("");
+    jButton3.setText("");
+    jButton3.setContentAreaFilled(false);
+    jButton3.setIcon(new ImageIcon(MasterFrame.class.getResource("SoftIcons/Main/Classes.png")));
+    jButton3.setRolloverIcon(new ImageIcon(MasterFrame.class.getResource("SoftIcons/Main/ClassesLUm.png")));
+    jButton3.setBorderPainted(false);
+    jButton3.setActionCommand("");
+    jButton3.setBounds(new Rectangle(13, 132, 154, 47));
+    jButton3.setBackground(SystemColor.activeCaptionBorder);
+    jButton4.setBackground(SystemColor.activeCaptionBorder);
+    jButton4.setBounds(new Rectangle(14, 186, 154, 47));
+    jButton4.setActionCommand("");
+    jButton4.setBorderPainted(false);
+    jButton4.setContentAreaFilled(false);
+    jButton4.setIcon(new ImageIcon(MasterFrame.class.getResource("SoftIcons/Main/Pro.png")));
+    jButton4.setRolloverIcon(new ImageIcon(MasterFrame.class.getResource("SoftIcons/Main/ProfLum.png")));
+    jButton4.setText("");
+    jButton5.setText("");
+    jButton5.setContentAreaFilled(false);
+    jButton5.setIcon(new ImageIcon(MasterFrame.class.getResource("SoftIcons/Main/Employes.png")));
+    jButton5.setRolloverIcon(new ImageIcon(MasterFrame.class.getResource("SoftIcons/Main/EmpLum.png")));
+    jButton5.setBorderPainted(false);
+    jButton5.setActionCommand("");
+    jButton5.setBounds(new Rectangle(14, 244, 157, 47));
+    jButton5.setBackground(SystemColor.activeCaptionBorder);
+    jButton6.setBackground(SystemColor.activeCaptionBorder);
+    jButton6.setBounds(new Rectangle(13, 304, 157, 47));
+    jButton6.setActionCommand("");
+    jButton6.setBorderPainted(false);
+    jButton6.setContentAreaFilled(false);
+    jButton6.setIcon(new ImageIcon(MasterFrame.class.getResource("SoftIcons/Main/Transport.png")));
+    jButton6.setRolloverIcon(new ImageIcon(MasterFrame.class.getResource("SoftIcons/Main/TransLum.png")));
+    jButton6.setText("");
+    jButton7.setText("");
+    jButton7.setContentAreaFilled(false);
+    jButton7.setHorizontalTextPosition(SwingConstants.TRAILING);
+    jButton7.setIcon(new ImageIcon(MasterFrame.class.getResource("SoftIcons/Main/Abs.png")));
+    jButton7.setRolloverIcon(new ImageIcon(MasterFrame.class.getResource("SoftIcons/Main/Abslum.png")));
+    jButton7.setBorderPainted(false);
+    jButton7.setActionCommand("");
+    jButton7.setBounds(new Rectangle(13, 360, 155, 47));
+    jButton7.setDebugGraphicsOptions(0);
+    jButton7.setBackground(SystemColor.activeCaptionBorder);
+    jButton8.setText("");
+    jButton8.setContentAreaFilled(false);
+    jButton8.setIcon(new ImageIcon(MasterFrame.class.getResource("SoftIcons/Main/stud.png")));
+    jButton8.setRolloverIcon(new ImageIcon(MasterFrame.class.getResource("SoftIcons/Main/StudLum.png")));
+    jButton8.setBorderPainted(false);
+    jButton8.setActionCommand("");
+    jButton8.setBounds(new Rectangle(13, 420, 155, 47));
+    jButton8.setBackground(SystemColor.activeCaptionBorder);
+    this.getContentPane().add(jPanel1, null);
+    jPanel1.add(Add, null);
+    jPanel1.add(Delete, null);
+    jPanel1.add(Edit, null);
+    jPanel1.add(View, null);
+    this.getContentPane().add(jPanel2, null);
+    jPanel2.add(jButton7, null);
+    jPanel2.add(jButton4, null);
+    jPanel2.add(jButton1, null);
+    jPanel2.add(jButton8, null);
+    jPanel2.add(jButton5, null);
+    jPanel2.add(jButton6, null);
+    jPanel2.add(jButton3, null);
+  }
+}

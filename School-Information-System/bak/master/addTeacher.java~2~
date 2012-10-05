@@ -1,0 +1,234 @@
+package master;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.Vector;
+
+/**
+ * <p>Title: </p>
+ * <p>Description: </p>
+ * <p>Copyright: Copyright (c) 2006</p>
+ * <p>Company: </p>
+ * @author not attributable
+ * @version 1.0
+ */
+
+public class addTeacher extends JFrame {
+  Vector teacherList;
+  JScrollPane js = new JScrollPane();
+  JPanel jPanel1 = new JPanel();
+  JLabel jLabel8 = new JLabel();
+  JLabel jLabel4 = new JLabel();
+  JTextField jTextField6 = new JTextField();
+  JButton jButton2 = new JButton();
+  JTextField jTextField9 = new JTextField();
+  JTextField jTextField10 = new JTextField();
+  JLabel jLabel1 = new JLabel();
+  JTextField jTextField7 = new JTextField();
+  JLabel jLabel3 = new JLabel();
+  JTextField jTextField12 = new JTextField();
+  JLabel jLabel7 = new JLabel();
+  JTextField jTextField3 = new JTextField();
+  JLabel jLabel2 = new JLabel();
+  JTextField jTextField2 = new JTextField();
+  JButton jButton1 = new JButton();
+  JLabel jLabel6 = new JLabel();
+  JTextField jTextField8 = new JTextField();
+  JTextField jTextField1 = new JTextField();
+  JTextField jTextField5 = new JTextField();
+  JTextField jTextField11 = new JTextField();
+  JTextField jTextField4 = new JTextField();
+  JLabel jLabel5 = new JLabel();
+  JLabel jLabel9 = new JLabel();
+  JPanel jPanel2 = new JPanel();
+  JPanel jPanel3 = new JPanel();
+  JTable jTable1 = new JTable();
+  JLabel jLabel10 = new JLabel();
+
+  public addTeacher() {
+    try {
+      jbInit();
+    }
+    catch(Exception ex) {
+      ex.printStackTrace();
+    }
+  }
+
+  void jbInit() throws Exception {
+    this.getContentPane().setLayout(null);
+    jPanel1.setBackground(SystemColor.controlLtHighlight);
+    jPanel1.setBounds(new Rectangle(41, 63, 428, 162));
+    jPanel1.setLayout(null);
+    jLabel8.setBounds(new Rectangle(282, 106, 137, 17));
+    jLabel8.setText("Heures de travaille");
+    jLabel4.setBounds(new Rectangle(-1, 54, 63, 17));
+    jLabel4.setText("Addresse");
+    jTextField6.setBounds(new Rectangle(0, 73, 257, 22));
+    jTextField6.setText("");
+    jButton2.setText("Cancel");
+    jButton2.addActionListener(new addTeacher_jButton2_actionAdapter(this));
+    //jButton2.addActionListener(new addTeacher_jButton2_actionAdapter(this));
+    jButton2.setBounds(new Rectangle(494, 159, 86, 32));
+    jTextField9.setText("");
+    jTextField9.setBounds(new Rectangle(327, 74, 59, 22));
+    jTextField10.setBounds(new Rectangle(0, 126, 118, 22));
+    jTextField10.setText("");
+    jLabel1.setText("Prénom");
+    jLabel1.setBounds(new Rectangle(1, 8, 63, 17));
+    jTextField7.setText("");
+    jTextField7.setBounds(new Rectangle(271, 74, 24, 22));
+    jLabel3.setText("Date de Naissance");
+    jLabel3.setBounds(new Rectangle(271, 7, 122, 17));
+    jTextField12.setText("");
+    jTextField12.setBounds(new Rectangle(270, 126, 116, 22));
+    jLabel7.setBounds(new Rectangle(147, 107, 63, 17));
+    jLabel7.setRequestFocusEnabled(true);
+    jLabel7.setText("Salaire");
+    jTextField3.setText("");
+    jTextField3.setBounds(new Rectangle(271, 26, 24, 22));
+    jLabel2.setBounds(new Rectangle(129, 7, 63, 17));
+    jLabel2.setText("Nom");
+    jTextField2.setBounds(new Rectangle(131, 28, 116, 22));
+    jTextField2.setText("");
+    jButton1.setBounds(new Rectangle(500, 110, 86, 32));
+    jButton1.setText("Add");
+    jButton1.addActionListener(new addTeacher_jButton1_actionAdapter(this));
+    //jButton1.addActionListener(new addTeacher_jButton1_actionAdapter(this));
+    jLabel6.setText("Téléphone");
+    jLabel6.setBounds(new Rectangle(2, 108, 63, 17));
+    jTextField8.setText("");
+    jTextField8.setBounds(new Rectangle(299, 74, 24, 22));
+    jTextField1.setText("");
+    jTextField1.setBounds(new Rectangle(0, 29, 115, 22));
+    jTextField5.setBounds(new Rectangle(325, 26, 61, 22));
+    jTextField5.setText("");
+    jTextField11.setText("");
+    jTextField11.setBounds(new Rectangle(145, 126, 116, 22));
+    jTextField4.setBounds(new Rectangle(298, 26, 24, 22));
+    jTextField4.setText("");
+    jLabel5.setBounds(new Rectangle(271, 54, 118, 17));
+    jLabel5.setText("Date de recrutement");
+    jLabel9.setToolTipText("");
+    jLabel9.setIcon(new ImageIcon(addTeacher.class.getResource("professeurADD.png")));
+    jLabel9.setText("");
+    jLabel9.setBounds(new Rectangle(-7, 0, 495, 53));
+    jPanel2.setBackground(SystemColor.controlLtHighlight);
+    jPanel2.setBounds(new Rectangle(-7, 262, 502, 256));
+    jPanel2.setLayout(null);
+    jTable1.setAlignmentY((float) 0.5);
+    jTable1.setBorder(BorderFactory.createLineBorder(Color.black));
+    jTable1.setAutoCreateColumnsFromModel(true);
+    jTable1.setAutoResizeMode(JTable.AUTO_RESIZE_SUBSEQUENT_COLUMNS);
+    jTable1.setCellSelectionEnabled(true);
+    jTable1.setModel(new javax.swing.table.DefaultTableModel(
+    new Object [][] {
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null}
+    },
+    new String [] {
+        "Prenom", "Nom","Salaire", "Date d'embauche", "Telephone", "address"}) {
+    boolean[] canEdit = new boolean [] {
+        false, false, false, false, false
+    };
+
+    public boolean isCellEditable(int rowIndex, int columnIndex) {
+        return canEdit [columnIndex];
+    }
+  });
+    jLabel10.setIcon(new ImageIcon(addTeacher.class.getResource("ProfesseurView.png")));
+    jLabel10.setText("");
+    jLabel10.setBounds(new Rectangle(-1, 234, 531, 52));
+    jPanel3.setBackground(SystemColor.controlLtHighlight);
+    jPanel3.setBounds(new Rectangle(16, 63, 460, 106));
+    jPanel3.setLayout(null);
+    js.setBounds(new Rectangle(4, 12, 443, 100));
+    this.getContentPane().setBackground(SystemColor.controlLtHighlight);
+    jPanel1.add(jTextField8, null);
+    jPanel1.add(jTextField7, null);
+    jPanel1.add(jTextField9, null);
+    jPanel1.add(jTextField11, null);
+    jPanel1.add(jLabel7, null);
+    jPanel1.add(jLabel8, null);
+    jPanel1.add(jTextField6, null);
+    jPanel1.add(jLabel5, null);
+    jPanel1.add(jLabel4, null);
+    jPanel1.add(jTextField1, null);
+    jPanel1.add(jLabel1, null);
+    jPanel1.add(jTextField2, null);
+    jPanel1.add(jTextField3, null);
+    jPanel1.add(jTextField4, null);
+    jPanel1.add(jTextField5, null);
+    jPanel1.add(jLabel3, null);
+    jPanel1.add(jLabel2, null);
+    jPanel1.add(jTextField10, null);
+    jPanel1.add(jLabel6, null);
+    jPanel1.add(jTextField12, null);
+    this.getContentPane().add(jLabel9, null);
+    this.getContentPane().add(jLabel10, null);
+    this.getContentPane().add(jButton1, null);
+    this.getContentPane().add(jButton2, null);
+    this.getContentPane().add(jPanel2, null);
+    jPanel2.add(jPanel3, null);
+    jPanel3.add(js, null);
+    this.getContentPane().add(jPanel1, null);
+    js.getViewport().add(jTable1, null);
+    js.setViewportView(jTable1);
+  }
+
+  void jButton2_actionPerformed(ActionEvent e) {
+    jTextField1.setText("");
+    jTextField2.setText("");
+    jTextField3.setText("");
+    jTextField4.setText("");
+    jTextField5.setText("");
+    jTextField6.setText("");
+    jTextField7.setText("");
+    jTextField8.setText("");
+    jTextField9.setText("");
+    jTextField10.setText("");
+    jTextField11.setText("");
+    jTextField12.setText("");
+  }
+
+  void jButton1_actionPerformed(ActionEvent e) {
+   // if(jTextField3.getText().getClass());
+    Teacher teacher = new Teacher ();
+    teacher.firstName = jTextField1.getText();
+    teacher.lastName = jTextField2.getText();
+    teacher.birthdate.set(Integer.parseInt(jTextField3.getText()),Integer.parseInt(jTextField4.getText()),Integer.parseInt(jTextField5.getText()));
+    teacher.address= jTextField6.getText();
+    teacher.phoneNumber=jTextField10.getText();
+    teacher.salary=Integer.parseInt(jTextField11.getText());
+    teacher.hoursWorked=Integer.parseInt(jTextField12.getText());
+    teacher.getDateOfHire().set(Integer.parseInt(jTextField7.getText()),Integer.parseInt(jTextField8.getText()),Integer.parseInt(jTextField9.getText()));
+    teacherList.add(teacher);//add teacher to the linked *list
+    //jTable1.set
+  }
+}
+
+class addTeacher_jButton1_actionAdapter implements java.awt.event.ActionListener {
+  addTeacher adaptee;
+
+  addTeacher_jButton1_actionAdapter(addTeacher adaptee) {
+    this.adaptee = adaptee;
+  }
+  public void actionPerformed(ActionEvent e) {
+    adaptee.jButton1_actionPerformed(e);
+  }
+}
+
+class addTeacher_jButton2_actionAdapter implements java.awt.event.ActionListener {
+  addTeacher adaptee;
+
+  addTeacher_jButton2_actionAdapter(addTeacher adaptee) {
+    this.adaptee = adaptee;
+  }
+  public void actionPerformed(ActionEvent e) {
+    adaptee.jButton2_actionPerformed(e);
+  }
+}

@@ -1,0 +1,326 @@
+package master;
+
+import javax.swing.*;
+import java.awt.*;
+import java.util.Vector;
+import java.util.GregorianCalendar;
+import java.awt.event.*;
+
+/**
+ * <p>Title: </p>
+ * <p>Description: </p>
+ * <p>Copyright: Copyright (c) 2006</p>
+ * <p>Company: </p>
+ * @author not attributable
+ * @version 1.0
+ */
+
+public class EmployeePanel extends JFrame {
+
+  Vector listOfEmployees = new Vector();
+  //JScrollPane js = new JScrollPane();
+  BorderLayout borderLayout1 = new BorderLayout();
+  JPanel jPanel1 = new JPanel();
+  JTextField jTextField1 = new JTextField();
+  JLabel jLabel1 = new JLabel();
+  JLabel jLabel2 = new JLabel();
+  JTextField jTextField2 = new JTextField();
+  JLabel jLabel3 = new JLabel();
+  JTextField jTextField3 = new JTextField();
+  JLabel jLabel4 = new JLabel();
+  JTextField jTextField4 = new JTextField();
+  JLabel jLabel5 = new JLabel();
+  JTextField jTextField5 = new JTextField();
+  JTextField jTextField6 = new JTextField();
+  JTextField jTextField7 = new JTextField();
+  JLabel jLabel6 = new JLabel();
+  JLabel jLabel7 = new JLabel();
+  JTextField jTextField8 = new JTextField();
+  JLabel jLabel8 = new JLabel();
+  JTextField jTextField9 = new JTextField();
+  JLabel jLabel9 = new JLabel();
+  JTable jTable1 = new JTable();
+  JScrollPane js1 = new JScrollPane();
+
+  public EmployeePanel() {
+    try {
+      jbInit();
+    }
+    catch(Exception ex) {
+      ex.printStackTrace();
+    }
+  }
+
+  void jbInit() throws Exception {
+
+    this.getContentPane().setLayout(borderLayout1);
+    jPanel1.setBackground(Color.white);
+    jPanel1.setLayout(null);
+    jTextField1.setText("");
+    jTextField1.setBounds(new Rectangle(26, 110, 123, 21));
+    jLabel1.setRequestFocusEnabled(true);
+    jLabel1.setText("Prénom");
+    jLabel1.setBounds(new Rectangle(27, 90, 97, 16));
+    jLabel2.setBounds(new Rectangle(173, 90, 97, 16));
+    jLabel2.setText("Nom");
+    jLabel2.setRequestFocusEnabled(true);
+    jTextField2.setBounds(new Rectangle(169, 110, 125, 21));
+    jTextField2.setText("");
+    jLabel3.setBounds(new Rectangle(25, 140, 97, 16));
+    jLabel3.setText("Addresse");
+    jLabel3.setRequestFocusEnabled(true);
+    jTextField3.setBounds(new Rectangle(26, 162, 268, 21));
+    jTextField3.setText("");
+    jLabel4.setRequestFocusEnabled(true);
+    jLabel4.setText("Téléphone");
+    jLabel4.setBounds(new Rectangle(323, 90, 97, 16));
+    jTextField4.setText("");
+    jTextField4.setBounds(new Rectangle(322, 110, 135, 21));
+    jLabel5.setRequestFocusEnabled(true);
+    jLabel5.setText("Date de Naissance");
+    jLabel5.setBounds(new Rectangle(322, 141, 114, 16));
+    jTextField5.setBounds(new Rectangle(323, 162, 28, 21));
+    jTextField5.addKeyListener(new EmployeePanel_jTextField5_keyAdapter(this));
+    jTextField5.addActionListener(new EmployeePanel_jTextField5_actionAdapter(this));
+    jTextField5.setText("");
+    jTextField6.setText("");
+    jTextField6.setBounds(new Rectangle(354, 162, 28, 21));
+    jTextField6.addKeyListener(new EmployeePanel_jTextField6_keyAdapter(this));
+    jTextField7.setText("");
+    jTextField7.setBounds(new Rectangle(387, 162, 69, 21));
+    jTextField7.addKeyListener(new EmployeePanel_jTextField7_keyAdapter(this));
+    jLabel6.setIcon(new ImageIcon(EmployeePanel.class.getResource("EmployeeAdd.png")));
+    jLabel6.setText("");
+    jLabel6.setBounds(new Rectangle(-4, 0, 517, 75));
+    jLabel7.setRequestFocusEnabled(true);
+    jLabel7.setText("Salary");
+    jLabel7.setBounds(new Rectangle(30, 190, 97, 16));
+    jTextField8.setBounds(new Rectangle(25, 212, 129, 21));
+    jTextField8.addKeyListener(new EmployeePanel_jTextField8_keyAdapter(this));
+    jTextField8.setText("");
+    jLabel8.setBounds(new Rectangle(176, 190, 110, 16));
+    jLabel8.setText("Heure de Travaille");
+    jLabel8.setRequestFocusEnabled(true);
+    jTextField9.setText("");
+    jTextField9.setBounds(new Rectangle(174, 212, 119, 21));
+    jTextField9.addKeyListener(new EmployeePanel_jTextField9_keyAdapter(this));
+    jLabel9.setBounds(new Rectangle(-3, 253, 507, 62));
+    jLabel9.setIcon(new ImageIcon(EmployeePanel.class.getResource("EmployeeShow.png")));
+    jLabel9.setIconTextGap(4);
+    jLabel9.setText("");
+    jTable1.setAlignmentY((float) 0.5);
+    jTable1.setBorder(BorderFactory.createLineBorder(Color.black));
+    jTable1.setAutoCreateColumnsFromModel(true);
+    jTable1.setAutoResizeMode(JTable.AUTO_RESIZE_SUBSEQUENT_COLUMNS);
+    jTable1.setCellSelectionEnabled(true);
+    jTable1.setModel(new javax.swing.table.DefaultTableModel(
+    new Object [][] {
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null}
+    },
+    new String [] {
+        "Prenom", "Nom","Salaire", "Date d'embauche", "Telephone", "address"}) {
+    boolean[] canEdit = new boolean [] {
+        false, false, false, false, false
+    };
+
+    public boolean isCellEditable(int rowIndex, int columnIndex) {
+        return canEdit [columnIndex];
+    }
+  });
+    js1.setBounds(new Rectangle(23, 334, 443, 113));
+    this.setTitle("School Information System");
+    jPanel1.add(jLabel1, null);
+    jPanel1.add(jTextField1, null);
+    jPanel1.add(jLabel2, null);
+    jPanel1.add(jTextField2, null);
+    jPanel1.add(jLabel4, null);
+    jPanel1.add(jTextField4, null);
+    jPanel1.add(jTextField3, null);
+    jPanel1.add(jTextField8, null);
+    jPanel1.add(jLabel7, null);
+    jPanel1.add(jLabel8, null);
+    jPanel1.add(jTextField9, null);
+    jPanel1.add(jLabel9, null);
+    jPanel1.add(jLabel5, null);
+    jPanel1.add(jTextField5, null);
+    jPanel1.add(jTextField6, null);
+    jPanel1.add(jLabel6, null);
+    jPanel1.add(jLabel3, null);
+    jPanel1.add(js1, null);
+    jPanel1.add(jTextField7, null);
+    js1.getViewport().add(jTable1, null);
+    js1.setViewportView(jTable1);
+    this.getContentPane().add(jPanel1, BorderLayout.CENTER);
+  }
+
+  void add(){
+    if ( jTextField1.getText().equals("") || jTextField2.getText().equals("") ||
+         jTextField6.getText().equals("") || jTextField3.getText().equals("") ||
+         jTextField4.getText().equals("") || jTextField5.getText().equals("") ||
+         jTextField7.getText().equals("") || jTextField8.getText().equals("") ||
+         jTextField9.getText().equals("")){
+      JOptionPane.showMessageDialog(this, "veuillez remplir tous les champs requis !!!");
+    }
+    else{
+
+      // if(jTextField3.getText().getClass());
+      Employee teacher = new Employee();
+      teacher.firstName = jTextField1.getText();
+      teacher.lastName = jTextField2.getText();
+      GregorianCalendar birthDate = new GregorianCalendar(Integer.parseInt(
+          jTextField5.getText()), Integer.parseInt(jTextField6.getText()),
+          Integer.parseInt(jTextField7.getText()));
+
+      teacher.birthdate = birthDate;
+      teacher.address = jTextField3.getText();
+      teacher.phoneNumber = jTextField4.getText();
+      teacher.salary = Integer.parseInt(jTextField8.getText());
+      teacher.hoursWorked = Integer.parseInt(jTextField9.getText());
+      GregorianCalendar hireDate = new GregorianCalendar(Integer.parseInt(
+          jTextField7.getText()), Integer.parseInt(jTextField8.getText()),
+          Integer.parseInt(jTextField9.getText()));
+      listOfEmployees.add(teacher); //add teacher to the linked *list
+      updateTable();
+    }
+  }
+    void updateTable(){
+    Object data[][] = new Object[listOfEmployees.size()][6];
+    String titles[] = { "Prenom", "Nom","Salaire", "Date de naissance", "Telephone", "address"};
+    for (int i = listOfEmployees.size() - 1; i  >= 0; i--){
+      Employee temp = (Employee) listOfEmployees.get(i);
+      data[listOfEmployees.size() - 1 - i][0] = temp.firstName ;
+      data[listOfEmployees.size() - 1 - i][1] = temp.lastName ;
+      String temp2 = new String(temp.getBirthdate().get(GregorianCalendar.DAY_OF_MONTH) + "/" +
+                                temp.getBirthdate().get(GregorianCalendar.MONTH) + "/" +
+                                temp.getBirthdate().get(GregorianCalendar.YEAR)
+                                );
+      data[listOfEmployees.size() - 1 - i][3] = temp2 ;
+      data[listOfEmployees.size() - 1 - i][4] = temp.getPhoneNumber() ;
+      data[listOfEmployees.size() - 1 - i][2] = new String (""+temp.getSalary()) ;
+      data[listOfEmployees.size() - 1 - i][5] = temp.getAddress() ;
+          }
+          mymodel ml = new mymodel (data, titles);
+          jTable1.setModel(ml);
+  }
+
+
+  void delete(){
+      if(listOfEmployees.size() != 0 && jTable1.getSelectedRow()<listOfEmployees.size()){
+          listOfEmployees.removeElementAt(jTable1.getSelectedRow());
+          updateTable();
+        }
+        else
+          JOptionPane.showMessageDialog(this, "veuillez selectionner un champs !!!");
+  }
+
+  void jTextField5_actionPerformed(ActionEvent e) {
+
+  }
+
+  void jTextField5_keyTyped(KeyEvent e) {
+    char c = e.getKeyChar();
+        if (!Character.isDigit(c))
+          e.consume();
+
+  }
+
+  void jTextField6_keyTyped(KeyEvent e) {
+    char c = e.getKeyChar();
+        if (!Character.isDigit(c))
+          e.consume();
+
+  }
+
+  void jTextField7_keyTyped(KeyEvent e) {
+    char c = e.getKeyChar();
+        if (!Character.isDigit(c))
+          e.consume();
+
+  }
+
+  void jTextField8_keyTyped(KeyEvent e) {
+    char c = e.getKeyChar();
+        if (!Character.isDigit(c))
+          e.consume();
+
+  }
+
+  void jTextField9_keyTyped(KeyEvent e) {
+    char c = e.getKeyChar();
+        if (!Character.isDigit(c))
+          e.consume();
+
+  }
+
+}
+
+class EmployeePanel_jTextField5_actionAdapter implements java.awt.event.ActionListener {
+  EmployeePanel adaptee;
+
+  EmployeePanel_jTextField5_actionAdapter(EmployeePanel adaptee) {
+    this.adaptee = adaptee;
+  }
+  public void actionPerformed(ActionEvent e) {
+    adaptee.jTextField5_actionPerformed(e);
+  }
+}
+
+class EmployeePanel_jTextField5_keyAdapter extends java.awt.event.KeyAdapter {
+  EmployeePanel adaptee;
+
+  EmployeePanel_jTextField5_keyAdapter(EmployeePanel adaptee) {
+    this.adaptee = adaptee;
+  }
+  public void keyTyped(KeyEvent e) {
+    adaptee.jTextField5_keyTyped(e);
+  }
+}
+
+class EmployeePanel_jTextField6_keyAdapter extends java.awt.event.KeyAdapter {
+  EmployeePanel adaptee;
+
+  EmployeePanel_jTextField6_keyAdapter(EmployeePanel adaptee) {
+    this.adaptee = adaptee;
+  }
+  public void keyTyped(KeyEvent e) {
+    adaptee.jTextField6_keyTyped(e);
+  }
+}
+
+class EmployeePanel_jTextField7_keyAdapter extends java.awt.event.KeyAdapter {
+  EmployeePanel adaptee;
+
+  EmployeePanel_jTextField7_keyAdapter(EmployeePanel adaptee) {
+    this.adaptee = adaptee;
+  }
+  public void keyTyped(KeyEvent e) {
+    adaptee.jTextField7_keyTyped(e);
+  }
+}
+
+class EmployeePanel_jTextField8_keyAdapter extends java.awt.event.KeyAdapter {
+  EmployeePanel adaptee;
+
+  EmployeePanel_jTextField8_keyAdapter(EmployeePanel adaptee) {
+    this.adaptee = adaptee;
+  }
+  public void keyTyped(KeyEvent e) {
+    adaptee.jTextField8_keyTyped(e);
+  }
+}
+
+class EmployeePanel_jTextField9_keyAdapter extends java.awt.event.KeyAdapter {
+  EmployeePanel adaptee;
+
+  EmployeePanel_jTextField9_keyAdapter(EmployeePanel adaptee) {
+    this.adaptee = adaptee;
+  }
+  public void keyTyped(KeyEvent e) {
+    adaptee.jTextField9_keyTyped(e);
+  }
+}

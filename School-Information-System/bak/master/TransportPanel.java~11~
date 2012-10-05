@@ -1,0 +1,280 @@
+package master;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.Vector;
+import java.util.GregorianCalendar;
+import database.Vehicle;
+
+
+public class TransportPanel extends JFrame {
+  Vector listOfVehicles = new Vector();
+  JPanel jPanel1 = new JPanel();
+  JLabel day = new JLabel();
+  JLabel jLabel8 = new JLabel();
+  JTextField marqueField = new JTextField();
+  JTextField driverField = new JTextField();
+  JPanel jPanel4 = new JPanel();
+  JScrollPane js = new JScrollPane();
+  JLabel jLabel1 = new JLabel();
+  JLabel jLabel3 = new JLabel();
+  JLabel jLabel7 = new JLabel();
+  JTextField yearTextField = new JTextField();
+  JLabel jLabel2 = new JLabel();
+  JTextField areaTextField = new JTextField();
+  JTextField monthTextField = new JTextField();
+  JTextField matriculeField = new JTextField();
+  JTextField dayTextField = new JTextField();
+  JPanel jPanel2 = new JPanel();
+  JTable jTable1 = new JTable();
+  JLabel jLabel5 = new JLabel();
+  JLabel jLabel9 = new JLabel();
+  JLabel jLabel4 = new JLabel();
+  public TransportPanel() {
+    try {
+      jbInit();
+    }
+    catch(Exception e) {
+      e.printStackTrace();
+    }
+  }
+  private void jbInit() throws Exception {
+    jPanel1.setLayout(null);
+    day.setToolTipText("");
+    day.setText("Date D\'Achat");
+    day.setBounds(new Rectangle(35, 147, 131, 15));
+    jLabel8.setIcon(new ImageIcon(TransportPanel.class.getResource("VehiculeAdd.png")));
+    jLabel8.setIconTextGap(4);
+    jLabel8.setText("");
+    jLabel8.setBounds(new Rectangle(0, 0, 520, 124));
+    marqueField.setBounds(new Rectangle(33, 79, 138, 22));
+    marqueField.setText("");
+    driverField.setText("");
+    driverField.setBounds(new Rectangle(211, 162, 177, 22));
+    jPanel4.setLayout(null);
+    jPanel4.setBounds(new Rectangle(4, 52, 468, 201));
+    jPanel4.setMaximumSize(new Dimension(500, 500));
+    jPanel4.setBackground(SystemColor.activeCaptionText);
+    js.getViewport().setBackground(SystemColor.activeCaptionText);
+    js.setBounds(new Rectangle(-2, 0, 468, 207));
+    jLabel1.setBounds(new Rectangle(33, 57, 120, 21));
+    jLabel1.setText("Marque du Vehicuel (*)");
+    jLabel3.setBounds(new Rectangle(34, 103, 81, 15));
+    jLabel3.setText("Quartier");
+    jLabel3.setToolTipText("");
+    jLabel7.setBounds(new Rectangle(26, 241, 159, 18));
+    jLabel7.setText("(*) These fileds are required");
+    jLabel7.setVerifyInputWhenFocusTarget(true);
+    yearTextField.setText("");
+    yearTextField.setBounds(new Rectangle(140, 162, 66, 22));
+    yearTextField.addKeyListener(new TransportPanel_yearTextField_keyAdapter(this));
+    jLabel2.setBounds(new Rectangle(177, 58, 99, 21));
+    jLabel2.setRequestFocusEnabled(true);
+    jLabel2.setText("Matricule");
+    areaTextField.setText("");
+    areaTextField.setBounds(new Rectangle(32, 118, 357, 23));
+    monthTextField.setText("");
+    monthTextField.setBounds(new Rectangle(87, 162, 44, 22));
+    monthTextField.addKeyListener(new TransportPanel_monthTextField_keyAdapter(this));
+    matriculeField.setBounds(new Rectangle(177, 79, 213, 22));
+    matriculeField.setText("");
+    dayTextField.setBounds(new Rectangle(34, 162, 42, 22));
+    dayTextField.addKeyListener(new TransportPanel_dayTextField_keyAdapter(this));
+    dayTextField.addActionListener(new TransportPanel_dayTextField_actionAdapter(this));
+    dayTextField.setText("");
+    jPanel2.setBackground(Color.white);
+    jPanel2.setAlignmentY((float) 0.5);
+    jPanel2.setBounds(new Rectangle(3, 376, 516, 218));
+    jPanel2.setLayout(null);
+    jTable1.setAlignmentY((float) 0.5);
+    jTable1.setBorder(BorderFactory.createLineBorder(Color.black));
+    jTable1.setAutoCreateColumnsFromModel(true);
+    jTable1.setAutoResizeMode(JTable.AUTO_RESIZE_SUBSEQUENT_COLUMNS);
+    jTable1.setCellSelectionEnabled(true);
+    jTable1.setModel(new javax.swing.table.DefaultTableModel(
+    new Object [][] {
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null},
+        {null, null, null, null, null, null}
+    },
+    new String [] {
+        "Marque", "Date d'achat", "Matricule", "Chauffaur", "Quartier"}) {
+    boolean[] canEdit = new boolean [] {
+        false, false, false, false, false
+    };
+
+    public boolean isCellEditable(int rowIndex, int columnIndex) {
+        return canEdit [columnIndex];
+    }
+  });
+    jLabel5.setToolTipText("");
+    jLabel5.setText("Nom Du Chauffeur");
+    jLabel5.setBounds(new Rectangle(211, 146, 105, 15));
+    this.getContentPane().setBackground(SystemColor.menu);
+    jPanel1.setBackground(SystemColor.menu);
+    jLabel9.setIcon(new ImageIcon(TransportPanel.class.getResource("VehiculeView.png")));
+    jLabel9.setText("");
+    jLabel9.setBounds(new Rectangle(-2, 253, 480, 98));
+    jLabel4.setText("Date D\'achat");
+    jLabel4.setBounds(new Rectangle(36, 144, 108, 18));
+    this.getContentPane().add(jPanel1, BorderLayout.CENTER);
+    jPanel4.add(jLabel1, null);
+    jPanel4.add(marqueField, null);
+    jPanel4.add(areaTextField, null);
+    jPanel4.add(driverField, null);
+    jPanel4.add(yearTextField, null);
+
+    jPanel4.add(jLabel3, null);
+    jPanel4.add(jLabel2, null);
+    jPanel4.add(monthTextField, null);
+    jPanel4.add(dayTextField, null);
+    jPanel4.add(matriculeField, null);
+    jPanel4.add(jLabel5, null);
+    jPanel4.add(jLabel7, null);
+    jPanel4.add(jLabel4, null);
+    jPanel1.add(jLabel9, null);
+    jPanel1.add(jPanel2, null);
+    jPanel2.add(js, null);
+    js.add(jTable1, null);
+    jPanel1.add(jLabel8, null);
+    jPanel1.add(jPanel4, null);
+    js.add(jTable1, null);
+    js.setViewportView(jTable1);
+  }
+
+  void updateTable(){
+     Object data[][] = new Object[listOfVehicles.size()][5];
+     String titles[] = { "Marque", "Date d'achat", "Matricule", "Chauffaur", "Quartier"};
+     for (int i = listOfVehicles.size() - 1; i  >= 0; i--){
+       Vehicle temp = (Vehicle) listOfVehicles.get(i);
+       data[listOfVehicles.size() - 1 - i][0] = temp.brand;
+       data[listOfVehicles.size() - 1 - i][3] = temp.matricule;
+       String temp2 = new String(temp.date.get(GregorianCalendar.DAY_OF_MONTH) + "/" +
+                                 temp.date.get(GregorianCalendar.MONTH) + "/" +
+                                 temp.date.get(GregorianCalendar.YEAR)
+                                 );
+       data[listOfVehicles.size() - 1 - i][2] = temp2 ;
+       data[listOfVehicles.size() - 1 - i][3] = temp.driver;
+       data[listOfVehicles.size() - 1 - i][4] = temp.area ;
+
+           }
+           mymodel ml = new mymodel (data, titles);
+           jTable1.setModel(ml);
+   }
+
+ /**
+  * Add
+  */
+ public void Add() {
+   if ( dayTextField.getText().equals("") || monthTextField.getText().equals("") ||
+         yearTextField.getText().equals("") || areaTextField.getText().equals("") ||
+         driverField.getText().equals("") || matriculeField.getText().equals("") || marqueField.getText().equals("")){
+      JOptionPane.showMessageDialog(this, "veuillez remplir tous les champs requis !!!");
+    }
+    else {
+      Vehicle teacher = new Vehicle("0");
+      teacher.brand = marqueField.getText();
+      teacher.matricule = matriculeField.getText();
+      GregorianCalendar date = new GregorianCalendar(Integer.parseInt(
+          dayTextField.getText()), Integer.parseInt(monthTextField.getText()),
+          Integer.parseInt(yearTextField.getText()));
+
+      teacher.date = date;
+      teacher.area = areaTextField.getText();
+      teacher.driver = driverField.getText();
+      listOfVehicles.add(teacher);
+
+     updateTable();
+
+    }
+ }
+
+ /**
+  * Delete
+  */
+ public void Delete() {
+   if (listOfVehicles.size() != 0 && jTable1.getSelectedRow() < listOfVehicles.size()){
+     if(jTable1.getSelectedRow()==-1)
+      JOptionPane.showMessageDialog(this, "veuillez selectionner un champs !!!");
+    else
+     listOfVehicles.removeElementAt(jTable1.getSelectedRow());
+     updateTable();
+   }
+   else
+     JOptionPane.showMessageDialog(this, "Veuillez selectionner une case");
+
+ }
+
+
+
+  void dayTextField_actionPerformed(ActionEvent e) {
+
+  }
+
+  void dayTextField_keyTyped(KeyEvent e) {
+    char c = e.getKeyChar();
+            if (!Character.isDigit(c)  && c != 010)
+              e.consume();
+
+  }
+
+  void monthTextField_keyTyped(KeyEvent e) {
+    char c = e.getKeyChar();
+            if (!Character.isDigit(c)  && c != 010)
+              e.consume();
+
+  }
+
+  void yearTextField_keyTyped(KeyEvent e) {
+    char c = e.getKeyChar();
+            if (!Character.isDigit(c)  && c != 010)
+              e.consume();
+  }
+}
+
+class TransportPanel_dayTextField_actionAdapter implements java.awt.event.ActionListener {
+  TransportPanel adaptee;
+
+  TransportPanel_dayTextField_actionAdapter(TransportPanel adaptee) {
+    this.adaptee = adaptee;
+  }
+  public void actionPerformed(ActionEvent e) {
+    adaptee.dayTextField_actionPerformed(e);
+  }
+}
+
+class TransportPanel_dayTextField_keyAdapter extends java.awt.event.KeyAdapter {
+  TransportPanel adaptee;
+
+  TransportPanel_dayTextField_keyAdapter(TransportPanel adaptee) {
+    this.adaptee = adaptee;
+  }
+  public void keyTyped(KeyEvent e) {
+    adaptee.dayTextField_keyTyped(e);
+  }
+}
+
+class TransportPanel_monthTextField_keyAdapter extends java.awt.event.KeyAdapter {
+  TransportPanel adaptee;
+
+  TransportPanel_monthTextField_keyAdapter(TransportPanel adaptee) {
+    this.adaptee = adaptee;
+  }
+  public void keyTyped(KeyEvent e) {
+    adaptee.monthTextField_keyTyped(e);
+  }
+}
+
+class TransportPanel_yearTextField_keyAdapter extends java.awt.event.KeyAdapter {
+  TransportPanel adaptee;
+
+  TransportPanel_yearTextField_keyAdapter(TransportPanel adaptee) {
+    this.adaptee = adaptee;
+  }
+  public void keyTyped(KeyEvent e) {
+    adaptee.yearTextField_keyTyped(e);
+  }
+}

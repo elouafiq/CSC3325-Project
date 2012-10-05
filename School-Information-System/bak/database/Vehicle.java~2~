@@ -1,0 +1,69 @@
+package database;
+
+import java.util.LinkedList;
+import database.exceptions.VehicleFullException;
+import database.Student;;
+
+public class Vehicle  implements java.io.Serializable{
+	public static final int maxOfStudents = 30;
+
+	private LinkedList listOfStudents;
+	private Employee driver;
+	private Employee superviser;
+	private String licencePlate;
+	private String area;
+
+	public Vehicle(String licencePlate){
+		listOfStudents = new LinkedList ();
+		driver = new Employee();
+		superviser = new Employee();
+		this.licencePlate = licencePlate;
+		area = "";
+	}
+
+	public void setLicencePlate(String licencePlate){
+		this.licencePlate = licencePlate;
+	}
+
+	public String getLicencePlate(){
+		return licencePlate;
+	}
+
+	public void setArea(String area){
+		this.area = area;
+	}
+
+	public String getArea(){
+		return area;
+	}
+
+	public void setDriver(Employee driver){
+		this.driver = driver;
+	}
+
+	public Employee getDriver(){
+		return driver;
+	}
+
+	public void setSuperviser(Employee superviser){
+		this.superviser = superviser;
+	}
+
+	public Employee getSuperviser(){
+		return superviser;
+	}
+
+	void addStudent(Student student) throws VehicleFullException{
+		if (listOfStudents.size() > maxOfStudents)
+			listOfStudents.add(student);
+		throw new VehicleFullException(new String(this + "is Full."));
+	}
+
+	public String toString(){
+		return new String("The bus which licence plate is: " + licencePlate + " ");
+	}
+
+	public boolean equals(Vehicle vehicle){
+		return licencePlate.equalsIgnoreCase(vehicle.getLicencePlate());
+	}
+}

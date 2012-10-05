@@ -1,0 +1,128 @@
+package database;
+
+import java.util.Vector;
+import database.exceptions.*;
+import java.util.Vector;
+public class Class {
+	public static final int maxNumberOfSections = 4;
+
+	private Vector listOfSections;
+	private String id;
+	private Vector courses;
+	private Vector listOfStudents;
+        public int students_per_section;
+        public int number_of_professors;
+	private int numberOfSections;
+        public boolean Status;
+
+	public Class(String id){
+		listOfSections = new Vector ();
+		this.id = id;
+		numberOfSections = 0;
+	}
+
+        public void setstudpsec(int k){
+          this.students_per_section=k;
+        }
+        public void profpersec(int k){
+         this.number_of_professors=k;
+}
+       public void numsec(int k){
+         this.numberOfSections=k;
+       }
+
+
+	public Vector getListOfSections() {
+		return listOfSections;
+	}
+
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public Vector getCourses() {
+		return courses;
+	}
+
+	public void setCourses(Vector courses) {
+		this.courses = courses;
+	}
+
+	public Vector getListOfStudents() {
+		return listOfStudents;
+	}
+
+	public void setListOfStudents(Vector listOfStudents) {
+		this.listOfStudents = listOfStudents;
+	}
+
+	public int getNumberOfSections() {
+		return numberOfSections;
+	}
+
+	public void addSection(Section section) throws TooManySectionsException, TimeConflictException {
+		if (listOfSections.size() >= Class.maxNumberOfSections)
+			throw new TooManySectionsException("Too Many Sections.");
+		for (int i = 0; i < listOfSections.size(); i++){
+                  Section sec= (Section)listOfSections.get(i);
+                  if (section.conflicts(sec.getSchedule()))
+                    throw new TimeConflictException(new String
+                                                    ("Time Conflict between " +
+                                                     listOfSections.get(i) +
+                                                     " and " + section));
+                  else{
+                    listOfSections.add(section);
+                   numberOfSections++;}
+                }
+
+
+	}
+
+	public void removeSection(Section section) throws NoSectionsException, SectionNotFoundException{
+		int foundSection = searchSection(section);
+		if(numberOfSections == 0)
+			throw new NoSectionsException("There are no sections in this class to remove !!!");
+		else if(foundSection == -1)
+			throw new SectionNotFoundException("Section not found !!!");
+		else {
+			numberOfSections--;
+			listOfSections.remove(foundSection);
+		}
+	}
+
+	public int searchSection(Section sec){
+		for(int i = 0; i < this.listOfSections.size(); i++){
+                  Section sect= (Section)listOfSections.get(i);
+                  if (sect.getId().equals(sec.getId()))
+                    return i;
+                }
+		return -1;
+	}
+
+	public void enrollStudent(Student student, Section section)
+						throws FullSectionException, StudentAlreadyEnrolledException,
+												SectionNotFoundException{
+		int foundSection = searchSection(section);
+		if (foundSection == -1)
+			throw new SectionNotFoundException("Section not found !!!");
+                for (int i = 0; i < courses.size(); i++)
+                  //student.addCourse(courses.get(i).getName());
+		listOfStudents.add(student);
+		//listOfSections.get(foundSection).enrollStudent(student);
+
+	}
+
+	public void removeStudent(Student student, Section section) throws SectionNotFoundException,
+							StudentNotFoundInSectionException, EmptySectionException{
+		int foundSection = searchSection(section);
+		if (foundSection == -1)
+			throw new SectionNotFoundException("Section not found !!!");
+		//listOfSections.get(foundSection).removeStudent(student);
+	}
+
+}

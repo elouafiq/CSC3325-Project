@@ -1,0 +1,61 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import javax.swing.*;
+import java.awt.*;
+
+/**
+ * <p>Title: </p>
+ * <p>Description: </p>
+ * <p>Copyright: Copyright (c) 2009</p>
+ * <p>Company: </p>
+ * @author not attributable
+ * @version 1.0
+ */
+
+public class MasterFrame extends JFrame {
+  JPanel jPanel1 = new JPanel();
+  GridLayout gridLayout1 = new GridLayout();
+  JButton Add = new JButton();
+  JButton View = new JButton();
+  JButton Edit = new JButton();
+  JButton Delete = new JButton();
+
+  public MasterFrame() {
+    try {
+      jbInit();
+    }
+    catch(Exception ex) {
+      ex.printStackTrace();
+    }
+  }
+
+  void jbInit() throws Exception {
+    this.getContentPane().setLayout(null);
+    jPanel1.setBounds(new Rectangle(232, 10, 584, 81));
+    jPanel1.setLayout(gridLayout1);
+    Add.setText("Ajouter");
+    View.setText("Voire Infos");
+    Edit.setText("Editer");
+    Delete.setText("Supprimer");
+    this.getContentPane().add(jPanel1, null);
+    jPanel1.add(Add, null);
+    jPanel1.add(Delete, null);
+    jPanel1.add(Edit, null);
+    jPanel1.add(View, null);
+  }
+}

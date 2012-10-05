@@ -1,0 +1,26 @@
+  public void save() throws FileNotFoundException, IOException {
+    String path = "data.txt";
+
+
+        FileOutputStream fis = new FileOutputStream(path);
+        ObjectOutputStream out = new ObjectOutputStream(fis);
+        for(int i = 0; i<listOfAbsences.size();i++){
+          out.writeObject(listOfAbsences.get(i));
+        }
+
+
+
+  }
+
+  public void load() throws FileNotFoundException, IOException,
+      ClassNotFoundException, IOException {
+
+    String path = "data.txt";
+    FileInputStream fis = new FileInputStream(path);
+      ObjectInputStream in = new ObjectInputStream(fis);
+      while(fis.available() > 0)
+        listOfAbsences.add((Absence) in.readObject());
+
+
+
+}

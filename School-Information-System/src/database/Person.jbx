@@ -1,0 +1,11 @@
+[PropertyInfo]
+address,String,false,false, , ,true,<default>
+birthdate,GregorianCalendar,false,false, , ,true,<default>
+firstName,String,false,false, , ,true,<default>
+lastName,String,false,false, , ,true,<default>
+phoneNumber,String,false,false, , ,true,<default>
+[IconNames]
+
+
+
+
